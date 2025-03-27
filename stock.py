@@ -3,17 +3,17 @@ from twilio.rest import Client
 
 
 #required api keys and endpoints
-Stock_api_key = "CAHLEF866LPVR8I1"
-News_api_key = "9f939e33eb7642e99819a7b168115ce0"
+Stock_api_key = "your stock api"
+News_api_key = "your newz api"
 
-Account_sid = "AC4c9844d365d2c8ea7c4f3b8c9b6a8377"
-Auth_token = "435208cb1e4975ed5017f642999d3650"
+Account_sid = "twilio sid"
+Auth_token = "twilipo auth token"
 
-STOCK_NAME = "TSLA"
-COMPANY_NAME = "Tesla Inc"
+STOCK_NAME = "stock name"
+COMPANY_NAME = "stock name"
 
-STOCK_ENDPOINT = "https://www.alphavantage.co/query"
-NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
+STOCK_ENDPOINT = "alpha vantage endpoint"
+NEWS_ENDPOINT = "news api endpoint"
 
 #stock api parameters
 stock_param = {
@@ -74,8 +74,8 @@ formatted_articles = [f"{STOCK_NAME}: {up_down}, {percentage:.2f}%\nHeadline: {a
 
 #sending the sms to user about all the information of stock price
 client = Client(Account_sid, Auth_token)
-from_number = "+19786339926"
-to_number = "+917717425541"
+from_number = "+197863xxxxx"
+to_number = "+9177174xxxxx"
 for article in formatted_articles:
     message = client.messages.create(
         body=article,
